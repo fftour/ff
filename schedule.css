@@ -72,6 +72,5 @@ nav ul ul li a:hover{
     box-shadow: none;
 }
 .sch{
-    height:640px;
-    width:1140px;
+    position:absolute;
 }

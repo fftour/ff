@@ -26,6 +26,7 @@ nav ul{
     list-style-type: none;
     margin-right: 40px;
     position: relative;
+    transition: top .3s;
 }
 nav ul li{
     float: left;

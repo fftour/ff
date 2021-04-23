@@ -1,83 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-    margin: 0;
-    padding: 0;
-    font-family: Comic Sans MS;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
 }
-body{
-    background: #f2f2f2;
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
 }
-nav{
-    background: #1b1b1b;
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
-nav:after{
-    content: '';
-    clear: both;
-    display: table;
+::-webkit-scrollbar-thumb {
+    background: #888;
 }
-nav .logo{
-    float: left;
-    color: white;
-    font-size: 27px;
-    font-weight: 600;
-    line-height: 70px;
+::selection{
+  background: rgb(0,123,255,0.3);
 }
-nav ul{
-    float: right;
-    list-style-type: none;
-    margin-right: 40px;
-    position: relative;
-    transition: top .3s;
+.content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 0 30px;
 }
-nav ul li{
-    float: left;
-    display: inline-block;
-    background: #1b1b1b;
-    margin: 0 5px;
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  padding: 25px 0;
+  transition: all 0.3s ease;
 }
-nav ul li a{
-    color: white;
-    text-decoration: none;
-    line-height: 70px;
-    font-size: 18px;
-    padding: 8px 15px;
+.navbar.sticky{
+  background: red;
+  padding: 10px 0;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
 }
-nav ul li a:hover{
-    color: cyan;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #33ffff;
-                0 0 5px #66ffff;
+.navbar .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-nav ul ul{
-    position: absolute;
-    top: 70px;
-    opacity: 0;
-    visibility: hidden;
-    transition: top .3s;
-    
+.navbar .logo a{
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
 }
-nav ul li:hover > ul{
-    opacity: 1;
-    visibility: visible;
+.navbar .menu-list{
+  display: inline-flex;
 }
-nav ul ul li{
-    position: relative;
-    margin: 0px;
-    width: 150px;
-    float: none;
-    display: list-item;
-    border-bottom: 1px solid rgba(0,0,0,0.3);
+.menu-list li{
+  list-style: none;
 }
-nav ul ul li a:hover{
-    color: cyan;
-    box-shadow: none;
+.menu-list li a{
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
-.title{
-    position: absolute;
-    margin-top: 15%;
-    margin-left: 40%;
-    transform: translate(-50% -50%);
+.menu-list li a:hover{
+  color: white;
 }
-.title h1{
+.icon{
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.menu-list .cancel-btn{
+  position: absolute;
+  right: 30px;
+  top: 20px;
+}
+@media (max-width: 1230px) {
+  .content{
+    padding: 0 60px;
+  }
+}
+@media (max-width: 1100px) {
+  .content{
+    padding: 0 40px;
+  }
+}
+@media (max-width: 900px) {
+  .content{
+    padding: 0 30px;
+  }
+}
+@media (max-width: 868px) {
+  body.disabled{
+    overflow: hidden;
+  }
+  .icon{
+    display: block;
+  }
+  .icon.hide{
+    display: none;
+  }
+  .navbar .menu-list{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    left: -100%;
+    top: 0px;
+    display: block;
+    padding: 40px 0;
     text-align: center;
-    font-size: 50px;
+    background: black;
+    transition: all 0.3s ease;
+  }
+  .navbar.show .menu-list{
+    left: 0%;
+  }
+  .navbar .menu-list li{
+    margin-top: 45px;
+  }
+  .navbar .menu-list li a{
+    font-size: 23px;
+    margin-left: -100%;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .navbar.show .menu-list li a{
+    margin-left: 0px;
+  }
+}
+@media (max-width: 380px) {
+  .navbar .logo a{
+    font-size: 27px;
+  }
 }

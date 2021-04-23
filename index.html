@@ -1,39 +1,46 @@
-<html>
-    <head>
-        <title>Ahlan-Ctg</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
-    </head>
-    <body>
-        <nav>
-            <div class="logo">Ahlan-ctg</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>
-                    <a href="#">Tournament</a>
-                    <ul>
-                     <li><a href="rules.html">Rules</a></li>
-                     <li><a href="https://forms.gle/8pr3tvx75mDezF4M6">Registration</a></li>
-                     <li><a href="point.html">Point Table</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">About us</a></li>
-            </ul>
-        </nav>
-                <div class="title">
-                    <h1>Welcome<br>to<br>Ahlan</h1>
-                </div>
-                <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/600305e8c31c9117cb6f4717/1es5su5sq';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-    </body>
-</html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="#">Ahlan-Ctg</a>
+      </div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://forms.gle/8pr3tvx75mDezF4M6">Tournament Registration</a></li>
+        <li><a href="#">Point Table</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      navbar.classList.add("show");
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+    }
+    cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+    }
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>

@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background-color: black;
+  background-color: white;
 }
 /* custom scroll bar */
 ::-webkit-scrollbar {
@@ -42,7 +42,7 @@
   justify-content: space-between;
 }
 .navbar .logo a{
-  color: white;
+  color: black;
   font-size: 30px;
   font-weight: 600;
   text-decoration: none;
@@ -54,7 +54,7 @@
   list-style: none;
 }
 .menu-list li a{
-  color: white;
+  color: black;
   font-size: 18px;
   font-weight: 500;
   margin-left: 25px;
@@ -62,10 +62,10 @@
   transition: all 0.3s ease;
 }
 .menu-list li a:hover{
-  color: white;
+  color: black;
 }
 .icon{
-  color: white;
+  color: black;
   font-size: 20px;
   cursor: pointer;
   display: none;
@@ -110,7 +110,7 @@
     display: block;
     padding: 40px 0;
     text-align: center;
-    background: black;
+    background: white;
     transition: all 0.3s ease;
   }
   .navbar.show .menu-list{
